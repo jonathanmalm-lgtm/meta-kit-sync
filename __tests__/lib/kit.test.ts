@@ -75,7 +75,7 @@ describe('subscribeToKit', () => {
           'X-Kit-Api-Key': 'kit-api-key',
           'Content-Type': 'application/json',
         }),
-        body: JSON.stringify({ subscriber_id: 1 }),
+        body: JSON.stringify({ email_address: 'jane@example.com' }),
       })
     )
   })

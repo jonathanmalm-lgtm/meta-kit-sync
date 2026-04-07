@@ -28,13 +28,6 @@ export async function subscribeToKit(params: SubscribeParams): Promise<void> {
     throw new Error(`Kit API error: ${createRes.status} - ${body}`)
   }
 
-  const createData = await createRes.json()
-  const subscriberId = createData.subscriber?.id
-
-  if (!subscriberId) {
-    throw new Error('Kit API error: No subscriber ID returned')
-  }
-
   // Step 2: Tag the subscriber
   const tagRes = await fetch(`https://api.kit.com/v4/tags/${kitTagId}/subscribers`, {
     method: 'POST',
@@ -42,7 +35,7 @@ export async function subscribeToKit(params: SubscribeParams): Promise<void> {
       'X-Kit-Api-Key': apiKey,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ subscriber_id: subscriberId }),
+    body: JSON.stringify({ email_address: email }),
   })
 
   if (!tagRes.ok) {
