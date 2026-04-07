@@ -68,14 +68,14 @@ describe('subscribeToKit', () => {
     // Second call: tag subscriber
     expect(global.fetch).toHaveBeenNthCalledWith(
       2,
-      'https://api.kit.com/v4/subscribers/1/tags/tag-456',
+      'https://api.kit.com/v4/tags/tag-456/subscribers',
       expect.objectContaining({
         method: 'POST',
         headers: expect.objectContaining({
           'X-Kit-Api-Key': 'kit-api-key',
           'Content-Type': 'application/json',
         }),
-        body: JSON.stringify({}),
+        body: JSON.stringify({ subscriber_id: 1 }),
       })
     )
   })

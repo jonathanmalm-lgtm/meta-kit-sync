@@ -36,13 +36,13 @@ export async function subscribeToKit(params: SubscribeParams): Promise<void> {
   }
 
   // Step 2: Tag the subscriber
-  const tagRes = await fetch(`https://api.kit.com/v4/subscribers/${subscriberId}/tags/${kitTagId}`, {
+  const tagRes = await fetch(`https://api.kit.com/v4/tags/${kitTagId}/subscribers`, {
     method: 'POST',
     headers: {
       'X-Kit-Api-Key': apiKey,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({}),
+    body: JSON.stringify({ subscriber_id: subscriberId }),
   })
 
   if (!tagRes.ok) {
