@@ -22,7 +22,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const { pageMapping, formMapping } = getFormMapping(pageId, formId)
     await subscribeToKit({
       apiKey: pageMapping.kitApiKey,
-      kitFormId: formMapping.kitFormId,
       kitTagId: formMapping.kitTagId,
       firstName: lead.firstName,
       lastName: lead.lastName,

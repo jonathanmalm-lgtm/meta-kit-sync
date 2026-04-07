@@ -1,5 +1,4 @@
 export interface FormMapping {
-  kitFormId: string
   kitTagId: string
 }
 

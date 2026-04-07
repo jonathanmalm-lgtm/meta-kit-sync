@@ -8,7 +8,7 @@ jest.mock('@/lib/qstash', () => ({
 jest.mock('@/lib/config', () => ({
   getFormMapping: jest.fn().mockReturnValue({
     pageMapping: { kitApiKey: 'kit-key' },
-    formMapping: { kitFormId: 'kf-1', kitTagId: 'kt-1' },
+    formMapping: { kitTagId: 'kt-1' },
   }),
 }))
 

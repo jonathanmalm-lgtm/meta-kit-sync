@@ -54,7 +54,6 @@ async function processLead({
     lead = await fetchLeadData(leadgenId, pageMapping.metaPageAccessToken)
     await subscribeToKit({
       apiKey: pageMapping.kitApiKey,
-      kitFormId: formMapping.kitFormId,
       kitTagId: formMapping.kitTagId,
       firstName: lead.firstName,
       lastName: lead.lastName,

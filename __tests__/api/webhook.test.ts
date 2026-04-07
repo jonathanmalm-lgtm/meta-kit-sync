@@ -8,7 +8,7 @@ jest.mock('@/lib/config', () => ({
       metaPageAccessToken: 'page-token',
       kitApiKey: 'kit-key',
     },
-    formMapping: { kitFormId: 'kf-1', kitTagId: 'kt-1' },
+    formMapping: { kitTagId: 'kt-1' },
   }),
 }))
 
