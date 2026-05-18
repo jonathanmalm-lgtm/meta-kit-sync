@@ -2,12 +2,11 @@ export interface SubscribeParams {
   apiKey: string
   kitTagId: string
   firstName: string
-  lastName: string
   email: string
 }
 
 export async function subscribeToKit(params: SubscribeParams): Promise<void> {
-  const { apiKey, kitTagId, firstName, lastName, email } = params
+  const { apiKey, kitTagId, firstName, email } = params
 
   // Step 1: Create or upsert subscriber
   const createRes = await fetch('https://api.kit.com/v4/subscribers', {
@@ -19,7 +18,6 @@ export async function subscribeToKit(params: SubscribeParams): Promise<void> {
     body: JSON.stringify({
       email_address: email,
       first_name: firstName,
-      fields: { last_name: lastName },
     }),
   })
 

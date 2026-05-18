@@ -24,7 +24,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       apiKey: pageMapping.kitApiKey,
       kitTagId: formMapping.kitTagId,
       firstName: lead.firstName,
-      lastName: lead.lastName,
       email: lead.email,
     })
     return new NextResponse('OK', { status: 200 })

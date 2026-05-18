@@ -56,7 +56,6 @@ async function processLead({
       apiKey: pageMapping.kitApiKey,
       kitTagId: formMapping.kitTagId,
       firstName: lead.firstName,
-      lastName: lead.lastName,
       email: lead.email,
     })
   } catch (error) {

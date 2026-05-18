@@ -4,12 +4,11 @@ const params = {
   apiKey: 'kit-api-key',
   kitTagId: 'tag-456',
   firstName: 'Jane',
-  lastName: 'Smith',
   email: 'jane@example.com',
 }
 
 describe('subscribeToKit', () => {
-  it('creates/updates subscriber with name and last_name field', async () => {
+  it('creates/updates subscriber with first name', async () => {
     global.fetch = jest
       .fn()
       .mockResolvedValueOnce({
@@ -36,7 +35,6 @@ describe('subscribeToKit', () => {
         body: JSON.stringify({
           email_address: 'jane@example.com',
           first_name: 'Jane',
-          fields: { last_name: 'Smith' },
         }),
       })
     )
